@@ -1,0 +1,26 @@
+
+const documentController = {};
+
+documentController.getRecentEvents = async (req, res, next) => {
+  try {
+    res.locals.recentEvents = await models.Event.find({}).sort({_id:-1}).limit(50); //retrieve 50 most recent events and stores in locals
+    return next(); //send the events to front end via router
+  } catch (error){
+    return res.status(400).send(`Failed to get recent events ${error}`);
+  };
+};
+
+documentController.getOneEvent = async (req, res, next) => {
+  try { 
+    let retrievedEvent;
+    if(req.query.id){
+      retrievedEvent = await models.Event.find({ _id: req.query.id})//if an id is provided find article by id
+    } else {
+      retrievedEvent = await models.Event.find(req.query)//if no id then find article by text search
+    };
+    res.locals.retrievedEvent = retrievedEvent;
+    return next();
+  } catch (error){
+      return res.status(400).send(`Failed to retrieve event! ${error}`);
+  };
+};
