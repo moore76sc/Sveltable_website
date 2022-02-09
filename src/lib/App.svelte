@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Header from '../lib/Header.svelte';
-  import Main from '../lib/Main.svelte';
-  import Features from '../lib/Features.svelte';
-  import Demo from '../lib/demo.svelte';
+  import Header from './lib/Header.svelte';
+  import Main from './lib/Main.svelte';
+  import Features from './lib/Features.svelte';
+  import Demo from './lib/demo.svelte';
   // let y;
 </script>
 
