@@ -4,15 +4,13 @@ import adapter from '@sveltejs/adapter-auto';
 const config = {
 	kit: {
 		adapter: adapter({ out: 'build'}),
-		target: '#svelte',
-		router: true,
-		ssr: true,
-		hydrate: true,
 		trailingSlash: 'never',
 		amp: false,
-		files: {
-		
+		browser: {
+			hydrate: true,
+			router: true,
 		}
+
 	}
 };
 
