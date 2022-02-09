@@ -1,9 +1,16 @@
 <script lang="ts">
+  /* 
+    index.svelte is where we are rendering our site. 
+    Header.svelte is the header/navigation component.
+    Main.svelte is our landing page with our sveltable logo and description.
+    Features.svelte is our text description of features within Sveltable.
+    Demo.svelte is a component containing a gif of creating a table component and a description of it.
+  */ 
+
   import Header from '../lib/Header.svelte';
   import Main from '../lib/Main.svelte';
   import Features from '../lib/Features.svelte';
-  import Demo from '../lib/demo.svelte';
-  // let y;
+  import Demo from '../lib/Demo.svelte';
 </script>
 
 <div class="AppContainer">

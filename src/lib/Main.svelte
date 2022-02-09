@@ -13,22 +13,17 @@
   }
 
   img {
-    width: 60%;
+    width: 30%;
     margin: auto;
     display: block;
-    /* position: absolute; */
-    /* width: 80%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
   }
 
   .main-logo {
-    /* height: 100vh; */
-    /* display: flex; */
-    margin-top: 8rem;
+    margin-top: 10rem;
     justify-content: center;
     text-align: center;
+    /* align-items: center; */
+    /* align-self: center; */
   }
 
   .main-text {
