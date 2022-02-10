@@ -1,6 +1,6 @@
-<script>
+<!-- <script>
 </script>
-
+ -->
 <div class="features">Features</div>
 
 <style>

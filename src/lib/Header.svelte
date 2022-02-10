@@ -7,21 +7,21 @@
 <svelte:window bind:scrollY={y} />
 
 <div class={`header ${y > 0 ? 'header-light' : 'header-dark'}`}>
-  <!-- <div class={`menu-left ml-${theme}`}>
+  <div class={`menu-left ml-${theme}`}>
     <div class="head-btn">demo</div>
     <div class="head-btn">features</div>
-    <div class="head-btn">team</div> -->
+    <div class="head-btn">team</div>
   </div>
   <div class="menu-logo">
-    <!-- <img id="logo-img" src={Img} alt="svelte table logo" /> -->
+    <img id="logo-img" src={Img} alt="svelte table logo" />
   </div>
   <div class="menu-social">
-    <!-- <h5 class={`item git-${theme}`}><i class="fab fa-github fa-2x" /></h5>
+    <h5 class={`item git-${theme}`}><i class="fab fa-github fa-2x" /></h5>
     <h5 class={`item fa-linkedin-${theme}`}>
       <i class={`fab fa-linkedin  fa-2x`} />
     </h5>
-    <h3 class:npm-light={y}><i class="fab fa-npm fa-2x" /></h3> -->
-  <!-- </div> -->
+    <h3 class:npm-light={y}><i class="fab fa-npm fa-2x" /></h3>
+  </div>
 </div>
 
 <style>

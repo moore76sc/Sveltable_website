@@ -25,15 +25,11 @@
 </script>
 
 <div class="DemoContainer">
-	<SvelTable dataSet={data} class="SveltableComponent" />
+	<SvelTable dataSet={data} />
 </div>
 
 <style>
-	.SveltableComponent {
-		background-color: white;
-	}
 	.DemoContainer {
-		/* height: 100vh; */
 		padding-top: 2em;
 		display: flex;
 		flex-direction: column;

@@ -23,26 +23,31 @@
   <div class="DemoContainer">
     <Demo />
   </div>
-  <!-- <div class="FeatureContainer">
+  <div class="FeatureContainer">
     <Features />
-  </div> -->
+  </div>
 </div>
 
 <style>
   .AppContainer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
+
   .MainContainer {
-    background-color: #002940;
-    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
   }
+
   .DemoContainer {
-    background-color: #002940;
-    height: 100vh;
+    min-height: 100vh;
   }
+
   .FeatureContainer {
-    background-color: #002940;
-    height: 100vh;
+    min-height: 100vh;
   }
 </style>
