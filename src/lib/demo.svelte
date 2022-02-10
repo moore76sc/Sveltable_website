@@ -18,13 +18,18 @@
 
 	let data = [];
 
-	for (let i = 0; i < userDefinedNum; i++) {
+	for (let i = 1; i < userDefinedNum + 1; i++) {
 		let newP = newPerson(i);
 		data.push(newP);
 	}
 </script>
 
+<div class="header">
+	<h2>demo</h2>
+</div>
+
 <div class="DemoContainer">
+	
 	<SvelTable dataSet={data} />
 </div>
 
@@ -35,4 +40,11 @@
 		flex-direction: column;
 		align-items: center;
 	}
+
+	.header{
+    color: #fff;
+    font-family: 'IBM Plex Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+  }
 </style>

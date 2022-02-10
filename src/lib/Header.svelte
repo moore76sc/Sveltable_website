@@ -16,20 +16,33 @@
     <img id="logo-img" src={Img} alt="svelte table logo" />
   </div>
   <div class="menu-social">
-    <h5 class={`item git-${theme}`}><i class="fab fa-github fa-2x" /></h5>
-    <h5 class={`item fa-linkedin-${theme}`}>
+
+    <a class={`git-${theme}`} href="https://github.com/oslabs-beta/SvelTable" target="_blank">
+      <div class={`git git-${theme}`}> <i class="fab fa-github fa-2x" /></div></a>
+    <div class={`linked fa-linkedin-${theme}`}>
       <i class={`fab fa-linkedin  fa-2x`} />
-    </h5>
-    <h3 class:npm-light={y}><i class="fab fa-npm fa-2x" /></h3>
+    </div>
+    <a class={`npm-${theme}`} href="https://www.npmjs.com/" target="_blank"> 
+    <div class={`npm npm-${theme}`}><i class="fab fa-npm fa-2x" /></div>
+  </a>
   </div>
+  
 </div>
 
+
 <style>
-  * {
+ * {
     margin: 0;
     padding: 0;
   }
+a{
+  text-decoration: none; 
+ 
+}
 
+a:visited{
+  color: #fff;
+}
   .header {
     height: 4rem;
     display: flex;
@@ -37,8 +50,11 @@
     justify-content: space-between;
     top: 0;
     left: 0;
+    /* padding-left: 10em;
+    padding-right: 10em; */
     width: 100%;
     position: fixed;
+   
   }
 
   .header-dark {
@@ -56,7 +72,7 @@
   .menu-left,
   .menu-social {
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     font-family: 'IBM Plex Sans', sans-serif;
   }
 
@@ -67,13 +83,25 @@
     color: #333;
   }
 
+   .npm{
+     margin-right: 1rem;
+     margin-left: .5rem;
+     font-size: 1.1em;
+   }
   .npm-light {
     color: #cc3534;
   }
 
-  .item {
-    margin: 0 0.5rem;
+  .npm-dark{
+    color: #fff;
   }
+
+  .git, .linked{
+    margin: 0 .5rem;
+    font-size: .8em;
+  }
+
+ 
 
   /* .fa-linkedin-dark {
   } */
@@ -107,9 +135,6 @@
     padding-left: 2rem;
   }
 
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
+
+ 
 </style>
