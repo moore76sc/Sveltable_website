@@ -1,36 +1,41 @@
-<script>
-  import namor from 'namor';
-  import SvelTable from 'sveltables';
-
-  function newPerson(num) {
-    const sexAssigner = Math.random();
+<script context='module'>
+/* console.log('context fire')
+  export const load = async ({ fetch }) => {
+  console.log('load fire')
+    const res = await fetch('./api');
+    const data = await res.json();
+    console.log(data)
     return {
-      id: num,
-      firstName: namor.generate({ words: 1, numbers: 0 }),
-      lastName: namor.generate({ words: 1, numbers: 0 }),
-      sex:
-        sexAssigner > 0.75
-          ? 'prefer not to say'
-          : sexAssigner > 0.25
-          ? 'male'
-          : 'female',
-      age: Math.floor(Math.random() * 110),
-      occupation: namor.generate({ words: 1, numbers: 0 }),
+      props:{
+        data,
+      },
     };
-  }
+  }; */
+</script>
+ 
+<script>
+const getDataSet = async () => {
+  const res = await fetch ("/");
+  const data = await res.text();
+  if (res.ok){
+    console.log(data)
+    return data}
+  else {
+    throw new Error(data);
+    }
+    }
+    let promise = getDataSet();
 
-  let userDefinedNum = 50;
+import SvelTable from 'sveltables'
 
-  let data = [];
-
-  for (let i = 0; i < userDefinedNum; i++) {
-    let newP = newPerson(i);
-    data.push(newP);
-  }
 </script>
 
 <div class="DemoContainer">
-  <SvelTable dataSet={data} class="SveltableComponent" />
+
+  {#await promise then data}
+	<SvelTable dataSet={data}/>
+{/await}
+
 </div>
 
 <style>
