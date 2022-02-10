@@ -1,43 +1,10 @@
 <script>
   import Img from '../assets/svelte_logo_resized.png';
-  let duration = '500ms';
-  let offset = 5;
-  let tolerance = 5;
-  let headerClass = 'header-dark';
   let y = 0;
-  let lastY = 0;
-
-  function updateClass(y) {
-    const dy = lastY - y;
-    lastY = y;
-    // determine show / hide class
-    return deriveClass(y, dy);
-  }
-
-  function deriveClass(y, dy) {
-    // stay dark if at the top of page
-    if (y < offset) {
-      return 'header-dark';
-    }
-    // don't change the state unless scroll delta
-    // is above a threshold
-    if (Math.abs(dy) <= tolerance) {
-      return headerClass;
-    }
-    // if scrolling down, change to light header
-    return 'header-light';
-  }
-
-  //setting transition timer
-  function setTransitionDuration(node) {
-    node.style.transitionDuration = duration;
-  }
-
   $: theme = y > 0 ? 'light' : 'dark';
 </script>
 
 <svelte:window bind:scrollY={y} />
-<!-- <div use:setTransitionDuration class={headerClass}> -->
 
 <div class={`header ${y > 0 ? 'header-light' : 'header-dark'}`}>
   <div class={`menu-left ml-${theme}`}>
@@ -70,8 +37,6 @@
     justify-content: space-between;
     top: 0;
     left: 0;
-    /* padding-left: 10em;
-    padding-right: 10em; */
     width: 100%;
     position: fixed;
   }
@@ -91,7 +56,7 @@
   .menu-left,
   .menu-social {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     font-family: 'IBM Plex Sans', sans-serif;
   }
 
