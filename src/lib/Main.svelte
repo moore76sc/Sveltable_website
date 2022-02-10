@@ -4,7 +4,7 @@
 
 <div class="main-container">
 	<img src={Img} alt="the svuture of data tables" />
-	<div class="main-text">the <i>sv</i>uture of datatables is here.</div>
+	<div class="main-text">the <i>sv</i>uture of datatables is here</div>
 </div>
 
 <style>
