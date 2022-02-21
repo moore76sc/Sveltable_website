@@ -1,4 +1,6 @@
-  import namor from 'namor';
+
+import namor from 'namor';
+let userDefinedNum = 50;
 
   function newPerson(num) {
     const sexAssigner = Math.random();
@@ -16,21 +18,17 @@
       occupation: namor.generate({ words: 1, numbers: 0 }),
     };
   }
-
-  let userDefinedNum = 50;
-
-  let data = [];
-
-  for (let i = 0; i < userDefinedNum; i++) {
-    let newP = newPerson(i);
-    data.push(newP);
-    
+  const createDataSet = () => {
+    let data=[];
+    for (let i = 0; i < userDefinedNum; i++) {
+      let newP = newPerson(i);
+      data.push(newP);
   }
-
-  export const get = () => {
+    return data
+  }
+export const get = () => {
+  const output = createDataSet();
     return {
-      body: {
-        data,
-      }
+      body: output
     }
-  }
+}
