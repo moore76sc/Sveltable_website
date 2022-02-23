@@ -30,7 +30,7 @@
   },
   "type": "module",
   "dependencies": {
-    "sveltables": "^0.1.6"
+    "sveltable": "^0.0.2"
 
   }
 }
